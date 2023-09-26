@@ -1,4 +1,4 @@
-import { Program, add, decode, encode, print, push, run } from "@package"
+import { Program, add, createBufferStack, decode, encode, print, push, run } from "@package"
 import * as fs from "fs/promises"
 
 // Create a program that adds 2 + 3 and then prints it to stdout
@@ -12,4 +12,4 @@ const filename = "my-silly-program"
 await fs.writeFile(filename, buffer)
 
 // read, decode and execute the program
-run(decode(await fs.readFile(filename)))
+run(decode(await fs.readFile(filename)), createBufferStack)

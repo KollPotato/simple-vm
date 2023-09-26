@@ -1,12 +1,13 @@
 import { INT32_BYTE_SIZE } from "./constants"
 import { Opcode, Program, Value } from "./instruction"
-import { Stack, createBufferStack } from "./stack"
+import { Stack } from "./stack"
 
-export function run(program: Program): Stack<Value> {
-    const stack = createBufferStack(
+export function run(program: Program, stackFn: (size: number) => Stack<Value>): Stack<Value> {
+    const stackSize =
         program.filter((instruction) => instruction.opcode === Opcode.PUSH)
             .length * INT32_BYTE_SIZE
-    )
+
+    const stack = stackFn(stackSize)
 
     let pc = 0
 
