@@ -1,7 +1,8 @@
+import { INSTRUCTION_BYTE_SIZE } from "./constants";
 import { Program } from "./instruction";
 
 export function encode(program: Program): Buffer {
-    const size = program.length * 5
+    const size = program.length * INSTRUCTION_BYTE_SIZE
     const buffer = Buffer.alloc(size)
 
     let offset = 0
