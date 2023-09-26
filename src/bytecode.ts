@@ -18,7 +18,7 @@ export function encode(program: Program): Buffer {
 export function decode(buffer: Buffer): Program {
     const program: Program = []
 
-    for (let i = 0; i < buffer.byteLength; i += 5) {
+    for (let i = 0; i < buffer.byteLength; i += INSTRUCTION_BYTE_SIZE) {
         const opcode = buffer.readUInt8(i)
         const value = buffer.readInt32LE(i + 1)
 
