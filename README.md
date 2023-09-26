@@ -1,4 +1,4 @@
-# v1
+# Simple VM
 
 To install dependencies:
 
