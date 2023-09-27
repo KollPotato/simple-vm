@@ -1,5 +1,5 @@
 import { INT32_BYTE_SIZE } from "./constants"
-import { Value } from "./instruction"
+import { Value } from "./instructions"
 
 export type Stack<T> = {
     pop(): T

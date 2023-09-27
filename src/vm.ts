@@ -1,5 +1,5 @@
 import { INT32_BYTE_SIZE } from "./constants"
-import { Opcode, Program, Value } from "./instruction"
+import { Opcode, Program, Value } from "./instructions"
 import { Stack } from "./stack"
 
 export function run(program: Program, stackFn: (size: number) => Stack<Value>): Stack<Value> {

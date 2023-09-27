@@ -1,5 +1,5 @@
 import { INSTRUCTION_BYTE_SIZE } from "./constants";
-import { Program } from "./instruction";
+import { Program } from "./instructions";
 
 export function encode(program: Program): Buffer {
     const size = program.length * INSTRUCTION_BYTE_SIZE
