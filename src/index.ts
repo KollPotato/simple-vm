@@ -1,5 +1,5 @@
 export * from "./bytecode"
 export * from "./constants"
-export * from "./instruction"
+export * from "./instructions"
 export * from "./stack"
 export * from "./vm"
